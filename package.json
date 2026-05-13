@@ -1,0 +1,21 @@
+{
+  "name": "crypto-course-landing",
+  "version": "1.0.0",
+  "description": "Bengali Crypto Course Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": [
+    "crypto",
+    "course",
+    "landing-page",
+    "bengali"
+  ],
+  "author": "Crypto Course",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

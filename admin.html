@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - ক্রিপ্টো কোর্স</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-purple-800 text-white">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold">Admin Panel</h2>
+            </div>
+            <nav class="mt-6">
+                <a href="#" onclick="showSection('hero')" class="block py-3 px-6 hover:bg-purple-700 transition">Hero Section</a>
+                <a href="#" onclick="showSection('features')" class="block py-3 px-6 hover:bg-purple-700 transition">Features</a>
+                <a href="#" onclick="showSection('pricing')" class="block py-3 px-6 hover:bg-purple-700 transition">Pricing</a>
+                <a href="#" onclick="showSection('testimonials')" class="block py-3 px-6 hover:bg-purple-700 transition">Testimonials</a>
+                <a href="#" onclick="showSection('faq')" class="block py-3 px-6 hover:bg-purple-700 transition">FAQ</a>
+                <a href="#" onclick="showSection('contact')" class="block py-3 px-6 hover:bg-purple-700 transition">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+            <h1 class="text-3xl font-bold mb-8">Content Management</h1>
+
+            <!-- Hero Section -->
+            <div id="hero-section" class="admin-section">
+                <div class="bg-white rounded-lg shadow p-6 mb-6">
+                    <h2 class="text-2xl font-bold mb-4">Hero Section</h2>
+                    <form id="hero-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Title (Bengali)</label>
+                                <textarea id="hero-title" class="w-full p-2 border rounded" rows="3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Subtitle (Bengali)</label>
+                                <textarea id="hero-subtitle" class="w-full p-2 border rounded" rows="3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Description (Bengali)</label>
+                                <textarea id="hero-description" class="w-full p-2 border rounded" rows="4"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Buy Button Text</label>
+                                <input type="text" id="hero-buy-btn" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Demo Button Text</label>
+                                <input type="text" id="hero-demo-btn" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Students Count</label>
+                                <input type="number" id="hero-students" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Rating</label>
+                                <input type="number" id="hero-rating" step="0.1" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Satisfaction Rate (%)</label>
+                                <input type="number" id="hero-satisfaction" class="w-full p-2 border rounded">
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-4 bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700">
+                            Update Hero Section
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div id="features-section" class="admin-section hidden">
+                <div class="bg-white rounded-lg shadow p-6 mb-6">
+                    <h2 class="text-2xl font-bold mb-4">Course Features</h2>
+                    <div id="features-list" class="space-y-4 mb-6">
+                        <!-- Features will be loaded here -->
+                    </div>
+                    <button onclick="addFeature()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                        Add New Feature
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pricing Section -->
+            <div id="pricing-section" class="admin-section hidden">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold mb-4">Pricing Information</h2>
+                    <form id="pricing-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Course Name</label>
+                                <input type="text" id="pricing-name" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Current Price (BDT)</label>
+                                <input type="number" id="pricing-current" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Original Price (BDT)</label>
+                                <input type="number" id="pricing-original" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Discount (%)</label>
+                                <input type="number" id="pricing-discount" class="w-full p-2 border rounded">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium mb-2">Features (comma-separated)</label>
+                                <textarea id="pricing-features" class="w-full p-2 border rounded" rows="3"></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium mb-2">Payment Methods (comma-separated)</label>
+                                <textarea id="pricing-methods" class="w-full p-2 border rounded" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-4 bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700">
+                            Update Pricing
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Testimonials Section -->
+            <div id="testimonials-section" class="admin-section hidden">
+                <div class="bg-white rounded-lg shadow p-6 mb-6">
+                    <h2 class="text-2xl font-bold mb-4">Testimonials</h2>
+                    <div id="testimonials-list" class="space-y-4 mb-6">
+                        <!-- Testimonials will be loaded here -->
+                    </div>
+                    <button onclick="addTestimonial()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                        Add New Testimonial
+                    </button>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div id="faq-section" class="admin-section hidden">
+                <div class="bg-white rounded-lg shadow p-6 mb-6">
+                    <h2 class="text-2xl font-bold mb-4">FAQ</h2>
+                    <div id="faq-list" class="space-y-4 mb-6">
+                        <!-- FAQ items will be loaded here -->
+                    </div>
+                    <button onclick="addFAQ()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                        Add New FAQ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact-section" class="admin-section hidden">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="contact-email" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Phone</label>
+                                <input type="text" id="contact-phone" class="w-full p-2 border rounded">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium mb-2">Address (Bengali)</label>
+                                <textarea id="contact-address" class="w-full p-2 border rounded" rows="2"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Facebook URL</label>
+                                <input type="url" id="contact-facebook" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Twitter URL</label>
+                                <input type="url" id="contact-twitter" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">YouTube URL</label>
+                                <input type="url" id="contact-youtube" class="w-full p-2 border rounded">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">LinkedIn URL</label>
+                                <input type="url" id="contact-linkedin" class="w-full p-2 border rounded">
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-4 bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700">
+                            Update Contact Info
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'api.php?endpoint=';
+
+        // Show specific section
+        function showSection(section) {
+            document.querySelectorAll('.admin-section').forEach(sec => {
+                sec.classList.add('hidden');
+            });
+            document.getElementById(section + '-section').classList.remove('hidden');
+            
+            // Load data for the section
+            switch(section) {
+                case 'hero': loadHero(); break;
+                case 'features': loadFeatures(); break;
+                case 'pricing': loadPricing(); break;
+                case 'testimonials': loadTestimonials(); break;
+                case 'faq': loadFAQ(); break;
+                case 'contact': loadContact(); break;
+            }
+        }
+
+        // Load Hero data
+        async function loadHero() {
+            try {
+                const response = await fetch(API_BASE + 'hero');
+                const hero = await response.json();
+                
+                document.getElementById('hero-title').value = hero.title_bn || '';
+                document.getElementById('hero-subtitle').value = hero.subtitle_bn || '';
+                document.getElementById('hero-description').value = hero.description_bn || '';
+                document.getElementById('hero-buy-btn').value = hero.buy_button_text || '';
+                document.getElementById('hero-demo-btn').value = hero.demo_button_text || '';
+                document.getElementById('hero-students').value = hero.students_count || '';
+                document.getElementById('hero-rating').value = hero.rating || '';
+                document.getElementById('hero-satisfaction').value = hero.satisfaction_rate || '';
+            } catch (error) {
+                console.error('Error loading hero data:', error);
+            }
+        }
+
+        // Load Features
+        async function loadFeatures() {
+            try {
+                const response = await fetch(API_BASE + 'features');
+                const features = await response.json();
+                
+                const featuresList = document.getElementById('features-list');
+                featuresList.innerHTML = features.map((feature, index) => `
+                    <div class="border rounded p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" placeholder="Icon" value="${feature.icon}" class="feature-icon p-2 border rounded">
+                            <input type="text" placeholder="Title (Bengali)" value="${feature.title_bn}" class="feature-title p-2 border rounded">
+                            <input type="text" placeholder="Description (Bengali)" value="${feature.description_bn}" class="feature-desc p-2 border rounded">
+                        </div>
+                        <button onclick="deleteFeature(${feature.id})" class="mt-2 bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                            Delete
+                        </button>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading features:', error);
+            }
+        }
+
+        // Load Pricing
+        async function loadPricing() {
+            try {
+                const response = await fetch(API_BASE + 'pricing');
+                const pricing = await response.json();
+                
+                document.getElementById('pricing-name').value = pricing.course_name || '';
+                document.getElementById('pricing-current').value = pricing.current_price || '';
+                document.getElementById('pricing-original').value = pricing.original_price || '';
+                document.getElementById('pricing-discount').value = pricing.discount_percentage || '';
+                document.getElementById('pricing-features').value = pricing.features ? pricing.features.join(', ') : '';
+                document.getElementById('pricing-methods').value = pricing.payment_methods ? pricing.payment_methods.join(', ') : '';
+            } catch (error) {
+                console.error('Error loading pricing:', error);
+            }
+        }
+
+        // Load Testimonials
+        async function loadTestimonials() {
+            try {
+                const response = await fetch(API_BASE + 'testimonials');
+                const testimonials = await response.json();
+                
+                const testimonialsList = document.getElementById('testimonials-list');
+                testimonialsList.innerHTML = testimonials.map(testimonial => `
+                    <div class="border rounded p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Student Name" value="${testimonial.student_name}" class="testimonial-name p-2 border rounded">
+                            <input type="text" placeholder="Location" value="${testimonial.student_location}" class="testimonial-location p-2 border rounded">
+                            <input type="number" placeholder="Rating (1-5)" value="${testimonial.rating}" class="testimonial-rating p-2 border rounded">
+                            <input type="text" placeholder="Initial" value="${testimonial.initial}" class="testimonial-initial p-2 border rounded">
+                        </div>
+                        <textarea placeholder="Testimonial Text" class="testimonial-text w-full p-2 border rounded mt-2" rows="3">${testimonial.testimonial_text}</textarea>
+                        <button onclick="deleteTestimonial(${testimonial.id})" class="mt-2 bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                            Delete
+                        </button>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading testimonials:', error);
+            }
+        }
+
+        // Load FAQ
+        async function loadFAQ() {
+            try {
+                const response = await fetch(API_BASE + 'faq');
+                const faq = await response.json();
+                
+                const faqList = document.getElementById('faq-list');
+                faqList.innerHTML = faq.map(item => `
+                    <div class="border rounded p-4">
+                        <input type="text" placeholder="Question (Bengali)" value="${item.question_bn}" class="faq-question w-full p-2 border rounded mb-2">
+                        <textarea placeholder="Answer (Bengali)" class="faq-answer w-full p-2 border rounded" rows="3">${item.answer_bn}</textarea>
+                        <button onclick="deleteFAQ(${item.id})" class="mt-2 bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700">
+                            Delete
+                        </button>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading FAQ:', error);
+            }
+        }
+
+        // Load Contact
+        async function loadContact() {
+            try {
+                const response = await fetch(API_BASE + 'contact');
+                const contact = await response.json();
+                
+                document.getElementById('contact-email').value = contact.email || '';
+                document.getElementById('contact-phone').value = contact.phone || '';
+                document.getElementById('contact-address').value = contact.address_bn || '';
+                document.getElementById('contact-facebook').value = contact.facebook_url || '';
+                document.getElementById('contact-twitter').value = contact.twitter_url || '';
+                document.getElementById('contact-youtube').value = contact.youtube_url || '';
+                document.getElementById('contact-linkedin').value = contact.linkedin_url || '';
+            } catch (error) {
+                console.error('Error loading contact:', error);
+            }
+        }
+
+        // Form submissions
+        document.getElementById('hero-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                title_bn: document.getElementById('hero-title').value,
+                subtitle_bn: document.getElementById('hero-subtitle').value,
+                description_bn: document.getElementById('hero-description').value,
+                buy_button_text: document.getElementById('hero-buy-btn').value,
+                demo_button_text: document.getElementById('hero-demo-btn').value,
+                students_count: parseInt(document.getElementById('hero-students').value),
+                rating: parseFloat(document.getElementById('hero-rating').value),
+                satisfaction_rate: parseInt(document.getElementById('hero-satisfaction').value)
+            };
+            
+            try {
+                const response = await fetch(API_BASE + 'hero', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    alert('Hero section updated successfully!');
+                }
+            } catch (error) {
+                console.error('Error updating hero:', error);
+                alert('Error updating hero section');
+            }
+        });
+
+        document.getElementById('pricing-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                course_name: document.getElementById('pricing-name').value,
+                current_price: parseFloat(document.getElementById('pricing-current').value),
+                original_price: parseFloat(document.getElementById('pricing-original').value),
+                discount_percentage: parseInt(document.getElementById('pricing-discount').value),
+                features: document.getElementById('pricing-features').value.split(',').map(f => f.trim()),
+                payment_methods: document.getElementById('pricing-methods').value.split(',').map(m => m.trim())
+            };
+            
+            try {
+                const response = await fetch(API_BASE + 'pricing', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    alert('Pricing updated successfully!');
+                }
+            } catch (error) {
+                console.error('Error updating pricing:', error);
+                alert('Error updating pricing');
+            }
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                email: document.getElementById('contact-email').value,
+                phone: document.getElementById('contact-phone').value,
+                address_bn: document.getElementById('contact-address').value,
+                facebook_url: document.getElementById('contact-facebook').value,
+                twitter_url: document.getElementById('contact-twitter').value,
+                youtube_url: document.getElementById('contact-youtube').value,
+                linkedin_url: document.getElementById('contact-linkedin').value
+            };
+            
+            try {
+                const response = await fetch(API_BASE + 'contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    alert('Contact info updated successfully!');
+                }
+            } catch (error) {
+                console.error('Error updating contact:', error);
+                alert('Error updating contact info');
+            }
+        });
+
+        // Load hero section by default
+        window.addEventListener('DOMContentLoaded', () => {
+            showSection('hero');
+        });
+    </script>
+</body>
+</html>

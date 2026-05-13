@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ক্রিপ্টো কোর্স - বাংলায় শিখুন ক্রিপ্টোকারেন্সি</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-purple-600">ক্রিপ্টো কোর্স</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-700 hover:text-purple-600 transition">হোম</a>
+                    <a href="#features" class="text-gray-700 hover:text-purple-600 transition">বৈশিষ্ট্য</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-purple-600 transition">মূল্য</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-purple-600 transition">প্রশংসাপত্র</a>
+                    <a href="#faq" class="text-gray-700 hover:text-purple-600 transition">সচরাচর প্রশ্ন</a>
+                </div>
+                <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition">
+                    এখনই কিনুন
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        বাংলায় শিখুন<br>
+                        <span class="text-yellow-300">ক্রিপ্টোকারেন্সি</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-100">
+                        ক্রিপ্টোকারেন্সির জগতে আপনার প্রথম পদক্ষেপ। শূন্য থেকে শুরু করে এক্সপার্ট হয়ে উঠুন আমাদের বিস্তারিত বাংলা কোর্সে।
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-300 transition transform hover:scale-105">
+                            🎯 কোর্সটি কিনুন - ৳২৯৯৯
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-purple-600 transition">
+                            📹 ফ্রি ডেমো দেখুন
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center gap-8">
+                        <div>
+                            <div class="text-3xl font-bold text-yellow-300">৫০০০+</div>
+                            <div class="text-sm">শিক্ষার্থী</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-yellow-300">৪.৮/৫</div>
+                            <div class="text-sm">রেটিং</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-yellow-300">৯৮%</div>
+                            <div class="text-sm">সন্তুষ্টি</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <div class="floating">
+                        <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                            <div class="text-center mb-6">
+                                <div class="text-6xl mb-4">🪙</div>
+                                <h3 class="text-2xl font-bold text-gray-800">ক্রিপ্টো মাস্টারি</h3>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-700">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    বিটকয়েন ও এথেরিয়াম
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    ট্রেডিং স্ট্র্যাটেজি
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    ওয়ালেট সেটআপ
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <span class="text-green-500 mr-2">✓</span>
+                                    রিস্ক ম্যানেজমেন্ট
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">আপনি কী শিখবেন</h2>
+                <p class="text-xl text-gray-600">ক্রিপ্টোকারেন্সির সব কিছু বাংলায়</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">বেসিক থেকে এডভান্সড</h3>
+                    <p class="text-gray-600">শূন্য থেকে শুরু করে এক্সপার্ট লেভেলের ক্রিপ্টো জ্ঞান। ব্লকচেইন, মাইনিং, ট্রেডিং সবকিছু।</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-4">🎥</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">৫০+ ভিডিও লেসন</h3>
+                    <p class="text-gray-600">বাংলায় তৈরি উচ্চমানের ভিডিও টিউটোরিয়াল। যেকোনো সময় দেখতে পারবেন, যতবার খুশি।</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">সাপোর্ট গ্রুপ</h3>
+                    <p class="text-gray-600">এক্সক্লুসিভ ফেসবুক গ্রুপে ২৪/৭ সাপোর্ট। প্রশ্ন করুন, শিখুন, অন্যদের সাহায্য করুন।</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">মোবাইল অ্যাপ</h3>
+                    <p class="text-gray-600">যেকোনো সময় যেকোনো জায়গা থেকে কোর্স করুন। অ্যান্ড্রয়েড ও iOS অ্যাপ উপলব্ধ।</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-4">📜</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">সার্টিফিকেট</h3>
+                    <p class="text-gray-600">কোর্স সম্পন্ন করলে অফিসিয়াল সার্টিফিকেট। আপনার অর্জনের প্রমাণ।</p>
+                </div>
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">লাইফটাইম আপডেট</h3>
+                    <p class="text-gray-600">ক্রিপ্টো মার্কেট পরিবর্তনের সাথে কোর্স ম্যাটেরিয়াল আপডেট। কোনো এক্সট্রা চার্জ নেই।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">কোর্সের মূল্য</h2>
+                <p class="text-xl text-gray-600">একবার কিনে আজীবন শিখুন</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-white text-center transform hover:scale-105 transition">
+                    <div class="text-sm uppercase tracking-wide mb-2">লিমিটেড অফার</div>
+                    <div class="text-5xl font-bold mb-4">৳২৯৯৯</div>
+                    <div class="text-xl mb-6 line-through opacity-75">৳৫৯৯৯</div>
+                    <div class="text-2xl font-semibold mb-8">৫০% ছাড়!</div>
+                    <ul class="text-left max-w-md mx-auto mb-8 space-y-3">
+                        <li class="flex items-center">
+                            <span class="text-green-300 mr-2">✓</span>
+                            সম্পূর্ণ কোর্স অ্যাক্সেস
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-300 mr-2">✓</span>
+                            লাইফটাইম ভিডিও আপডেট
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-300 mr-2">✓</span>
+                            সাপোর্ট গ্রুপে অ্যাক্সেস
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-300 mr-2">✓</span>
+                            অফিসিয়াল সার্টিফিকেট
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-300 mr-2">✓</span>
+                            মোবাইল অ্যাপ অ্যাক্সেস
+                        </li>
+                    </ul>
+                    <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-300 transition">
+                        🎯 এখনই কিনুন
+                    </button>
+                    <div class="mt-6 text-sm opacity-75">
+                        💳 বিকাশ, রকেট, নগদ, কার্ড - সব পেমেন্ট মেথড উপলব্ধ
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">শিক্ষার্থীদের মতামত</h2>
+                <p class="text-xl text-gray-600">যারা শিখেছেন তাদের অভিজ্ঞতা</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"অসাধারণ কোর্স! বাংলায় এত সুন্দরভাবে ক্রিপ্টো বুঝানো হয়েছে, জীবনেও ভাবিনি।"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-purple-600 font-bold">
+                            র
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold">রহিম উদ্দিন</div>
+                            <div class="text-sm text-gray-500">ঢাকা</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"কোর্সটি করার পর আমি নিয়মিত ট্রেডিং করে ভালো ইনকাম করছি। সাপোর্ট অসাধারণ।"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-purple-600 font-bold">
+                            স
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold">সামিয়া আক্তার</div>
+                            <div class="text-sm text-gray-500">চট্টগ্রাম</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"প্রফেশনাল লেভেলের কন্টেন্ট। যেকোনো নতুন শিক্ষার্থীর জন্য সেরা চয়েস।"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-purple-600 font-bold">
+                            ক
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold">কামাল হোসেন</div>
+                            <div class="text-sm text-gray-500">রাজশাহী</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">সচরাচর প্রশ্ন</h2>
+                <p class="text-xl text-gray-600">আপনার মনে যেসব প্রশ্ন আসতে পারে</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-2">কোর্সটি করতে কত সময় লাগবে?</h3>
+                    <p class="text-gray-600">সম্পূর্ণ কোর্সটি করতে সাধারণত ২-৩ মাস সময় লাগে। তবে আপনি নিজের সুবিধামতো সময় নিতে পারেন।</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-2">আমি কি কোনো পূর্ব জ্ঞান ছাড়া কোর্সটি করতে পারব?</h3>
+                    <p class="text-gray-600">হ্যাঁ! কোর্সটি সম্পূর্ণ নতুনদের জন্য তৈরি। আপনার কোনো পূর্ব জ্ঞান লাগবে না।</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-2">কোর্সটি কিনলে কতদিন অ্যাক্সেস পাব?</h3>
+                    <p class="text-gray-600">একবার কিনলে আজীবন অ্যাক্সেস পাবেন। কোনো মাসিক বা বার্ষিক ফি নেই।</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-2">কিভাবে পেমেন্ট করতে পারব?</h3>
+                    <p class="text-gray-600">বিকাশ, রকেট, নগদ, ক্রেডিট/ডেবিট কার্ড - সব ধরনের পেমেন্ট মেথড উপলব্ধ।</p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-2">কোর্সটি কি আপডেট থাকে?</h3>
+                    <p class="text-gray-600">হ্যাঁ, ক্রিপ্টো মার্কেটের সাথে কোর্স ম্যাটেরিয়াল নিয়মিত আপডেট করা হয়।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">ক্রিপ্টো কোর্স</h3>
+                    <p class="text-gray-400">বাংলায় ক্রিপ্টোকারেন্সি শেখার সেরা প্ল্যাটফর্ম</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">কুইক লিংক</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">হোম</a></li>
+                        <li><a href="#features" class="hover:text-white transition">বৈশিষ্ট্য</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">মূল্য</a></li>
+                        <li><a href="#faq" class="hover:text-white transition">সচরাচর প্রশ্ন</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">যোগাযোগ</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 crypto@course.com</li>
+                        <li>📱 +880 1234-567890</li>
+                        <li>📍 ঢাকা, বাংলাদেশ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">সোশ্যাল মিডিয়া</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition">f</a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition">t</a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition">y</a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; ২০২৪ ক্রিপ্টো কোর্স। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll animation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
